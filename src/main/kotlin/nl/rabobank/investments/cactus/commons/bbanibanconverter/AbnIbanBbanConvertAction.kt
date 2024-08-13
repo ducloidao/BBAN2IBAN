@@ -1,0 +1,3 @@
+package nl.rabobank.investments.cactus.commons.bbanibanconverter
+
+class AbnIbanBbanConvertAction: IbanBbanConvertAction(ABN_SWIFT_CODE)

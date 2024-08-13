@@ -1,0 +1,80 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>nl.rabobank.investments.cactus.commons.BbanIbanConverter</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Bban to Iban converter</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="duc.loi.dao@rabobank.nl" url="https://www.rabobank.nl">Rabobank Utrecht</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description><![CDATA[
+    BBAN to IBAN converter for Rabo, ABN and Ing bank and IBAN to BBAN converter<br>
+    <em>Just select a BBAN or IBAN text and click right mouse to select the desired Iban (RABO, ING, ABNAMRO bank) or bban to convert and replace selected text</em>
+    <br>The code to convert BBAN to IBAN based on</br>
+    <br>groupId=nl.garvelink.oss</br>
+    <br>artifactId=iban</br>
+    <br>version=1.11.0</br>
+    <br>https://www.garvelink.nl/java-iban/</br>
+    <p><img src="https://plugins.jetbrains.com/files/9960/screenshot_18032.png" alt="demo" width="600" height="360"></p>
+  ]]></description>
+
+    <!-- Product and plugin compatibility requirements.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <!-- Extension points defined by the plugin.
+         Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+    <extensions defaultExtensionNs="com.intellij">
+
+    </extensions>
+    <actions>
+        <action id="AbnBban2Iban.EditorPopupMenu"
+                class="nl.rabobank.investments.cactus.commons.bbanibanconverter.AbnIbanBbanConvertAction"
+                text="Convert ABN Amro Iban to Bban"
+                description="Click to convert to Abn Amro Iban or Bban"
+                icon="/icons/ABN-AMRO_icon.svg">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <action id="IngBban2Iban.EditorPopupMenu"
+                class="nl.rabobank.investments.cactus.commons.bbanibanconverter.IngIbanBbanConvertAction"
+                text="Convert ING Iban to Bban"
+                description="Click to convert to ING Iban or Bban"
+                icon="/icons/ing-groep-icon.svg">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <action id="RaboBban2Iban.EditorPopupMenu"
+                class="nl.rabobank.investments.cactus.commons.bbanibanconverter.RaboIbanBbanConvertAction"
+                text="Convert Bban to Rabo Iban"
+                description="Click to convert to RABO Iban or Bban"
+                icon="/icons/rabobank_icon.svg">
+            <add-to-group group-id="EditorPopupMenu" anchor="first"/>
+        </action>
+        <action id="AbnBban2Iban.ConsoleEditorPopupMenu"
+                class="nl.rabobank.investments.cactus.commons.bbanibanconverter.AbnIbanBbanConvertAction"
+                text="Convert to ABN Amro Iban or Bban"
+                description="Click to convert to Abn Amro Iban or Bban"
+                icon="/icons/ABN-AMRO_icon.svg">
+            <add-to-group group-id="ConsoleEditorPopupMenu" anchor="first"/>
+        </action>
+        <action id="IngBban2Iban.ConsoleEditorPopupMenu"
+                class="nl.rabobank.investments.cactus.commons.bbanibanconverter.IngIbanBbanConvertAction"
+                text="Convert to ING Iban or Bban"
+                description="Click to convert to ING Iban or Bban"
+                icon="/icons/rabobank_icon.svg">
+            <add-to-group group-id="ConsoleEditorPopupMenu" anchor="first"/>
+        </action>
+        <action id="RaboBban2Iban.ConsoleEditorPopupMenu"
+                class="nl.rabobank.investments.cactus.commons.bbanibanconverter.RaboIbanBbanConvertAction"
+                text="Convert to Rabo Iban or Bban"
+                description="Click to convert to RABO Iban or Bban"
+                icon="/icons/rabobank_icon.svg">
+            <add-to-group group-id="ConsoleEditorPopupMenu" anchor="first"/>
+        </action>
+    </actions>
+</idea-plugin>
