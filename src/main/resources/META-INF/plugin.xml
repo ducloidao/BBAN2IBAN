@@ -14,14 +14,13 @@
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
     <description><![CDATA[
-    BBAN to IBAN converter for Rabo, ABN and Ing bank and IBAN to BBAN converter<br>
+    BBAN <-> IBAN validator and converter for Rabobank, ABN and Ing bank<br>
     <em>Just select a BBAN or IBAN text and click right mouse to select the desired Iban (RABO, ING, ABNAMRO bank) or bban to convert and replace selected text</em>
     <br>The code to convert BBAN to IBAN based on</br>
     <br>groupId=nl.garvelink.oss</br>
     <br>artifactId=iban</br>
     <br>version=1.11.0</br>
     <br>https://www.garvelink.nl/java-iban/</br>
-    <p><img src="https://plugins.jetbrains.com/files/9960/screenshot_18032.png" alt="demo" width="600" height="360"></p>
   ]]></description>
 
     <!-- Product and plugin compatibility requirements.

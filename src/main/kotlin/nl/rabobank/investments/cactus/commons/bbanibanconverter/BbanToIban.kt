@@ -5,6 +5,9 @@ import nl.garvelink.iban.Modulo97
 
 object BbanToIban {
     fun convertBBANToIBAN(bban: String, swiftCode: String): String {
+        if (isValidBBAN(bban).not()) {
+            throw IllegalArgumentException("Invalid BBAN: $bban")
+        }
         val paddedBban = bban.padStart(
             BBAN_LENGTH_NETHERLANDS,
             PADDING_CHAR
@@ -14,6 +17,11 @@ object BbanToIban {
             COUNTRY_CODE, swiftCodePlusBban
         ).toPlainString()
     }
+
+    fun isValidBBAN(bban: String): Boolean {
+        return bban.length <= BBAN_LENGTH_NETHERLANDS && bban.all { it.isDigit() }
+    }
+
     private fun makeIban(countryCode: String, swiftCodePlusBban: String): IBAN {
         val sb = StringBuilder().append(countryCode).append("00").append(swiftCodePlusBban)
         val checkDigits = Modulo97.calculateCheckDigits(sb)
