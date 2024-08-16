@@ -32,7 +32,6 @@ object BbanToIban {
 
     private const val BBAN_LENGTH_NETHERLANDS = 10
     private const val COUNTRY_CODE = "NL"
-    private const val RABO_SWIFT_CODE = "RABO"
     private const val IBAN_CHECK_DIGITS_LENGTH = 2
     private const val IBAN_CHECK_DIGIT_START_INDEX = 2
     private const val IBAN_CHECK_DIGIT_END_INDEX = 4
