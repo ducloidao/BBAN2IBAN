@@ -16,8 +16,8 @@ import nl.rabobank.investments.cactus.commons.bbanibanconverter.BbanToIban.conve
 abstract class IbanBbanConvertAction(val bankSwiftCode: String) : AnAction() {
     override fun actionPerformed(event: AnActionEvent) {
         // Get all the required data from data keys
-        val editor: Editor = event.getRequiredData(CommonDataKeys.EDITOR)
-        val project: Project = event.getRequiredData(CommonDataKeys.PROJECT)
+        val editor: Editor = event.getData(CommonDataKeys.EDITOR) ?: return
+        val project: Project = event.getData(CommonDataKeys.PROJECT) ?: return
         val document: Document = editor.document
 
 

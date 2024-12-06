@@ -22,6 +22,7 @@
     <br>version=1.11.0</br>
     <br>https://www.garvelink.nl/java-iban/</br>
   ]]></description>
+    <idea-version since-build="243.0" until-build="243.*"/>
 
     <!-- Product and plugin compatibility requirements.
          Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
