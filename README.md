@@ -1,10 +1,29 @@
-This is plugin for Intellij which is used to validate and converter BBAN <-> IBAN, by selected Text and right click if only if the selected text is a valid BBAN or IBAN then in popup menu it will show up option to convert to IBAN or BBAN.
-<br/>Right now this plugin supports only 3 banks from Netherland which are:
+# BbanIbanConverter
+
+This is a plugin for IntelliJ IDEA used to validate and convert BBAN <-> IBAN. By selecting text and right-clicking, if the selected text is a valid BBAN or IBAN, a popup menu will show options to convert to IBAN or BBAN.
+
+## Supported Banks
+Currently, this plugin supports the following banks from the Netherlands:
 1. Rabobank
 2. ING
-3. ABN
-<br/>To validate and convert BBAN to IBAN, this plugin uses java-iban from:<br/>
-https://github.com/barend/java-iban
-<br/>
+3. ABN AMRO
 
-![Alt Text](https://github.com/ducloidao/BBAN2IBAN/blob/main/src/main/resources/demo.gif)
+## Usage
+To validate and convert BBAN to IBAN, this plugin uses the `java-iban` library from:
+[https://github.com/barend/java-iban](https://github.com/barend/java-iban)
+
+## Installation
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/ducloidao/BBAN2IBAN.git
+    ```
+2. Open the project in IntelliJ IDEA.
+3. Build the project using Gradle.
+
+## Building the Plugin
+To build the plugin, run the following Gradle tasks:
+```sh
+./gradlew build
+./gradlew patchPluginXml
+./gradlew signPlugin
+./gradlew publishPlugin
